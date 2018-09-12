@@ -29,4 +29,5 @@ RUN apt-get update \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
         && chmod +x /run-application.sh
 
-HEALTHCHECK --interval=60s --timeout=15s --retries=3 CMD curl --silent --fail http://localhost:8080/ || exit 1
+#HEALTHCHECK --interval=60s --timeout=15s --retries=3 CMD curl --silent --fail http://localhost:8080/ || exit 1
+HEALTHCHECK --interval=60s --timeout=15s --retries=3 CMD curl --silent --fail http://localhost:8080/  && mosquitto_pub -d -h "127.0.0.1" -t "v1/devices/me/attributes" -u "9i3uWxbjKxmOKIU9F4X5" -m "{firmware_version:1.0.1, serial_number:SN-001}" || exit 1
