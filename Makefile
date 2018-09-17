@@ -1,6 +1,6 @@
-VERSION=2.1.1-http-mqtt_healthcheck
-PROJECT=m2mgroupe
-APP=thingsboard-healthcheck
+VERSION=2.1.1-http-mqtt_healthcheck_with_id_prefix
+PROJECT=tsouhaieb
+APP=thingsboard_healthcheck_log
 
 build:
 	#cp ../../application/target/thingsboard.deb .
