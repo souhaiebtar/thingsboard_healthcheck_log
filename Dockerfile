@@ -21,10 +21,7 @@ ADD thingsboard.deb /thingsboard.deb
 
 
 RUN apt-get update \
-        && apt-get install --no-install-recommends -y nmap curl tmux libmosquitto1 \
-        && curl -fLo mosquitto-clients.deb  https://github.com/souhaiebtar/debs/blob/master/mosquitto-clients_1.4.10-3+deb9u1_amd64.deb?raw=true \
-        && dpkg -i mosquitto-clients.deb \
-        && rm -f mosquitto-clients.deb \
+        && apt-get install --no-install-recommends -y nmap curl mosquitto-clients libmosquitto1 \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
         && chmod +x /run-application.sh
