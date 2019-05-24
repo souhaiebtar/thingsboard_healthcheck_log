@@ -21,7 +21,7 @@ ADD thingsboard.deb /thingsboard.deb
 
 
 RUN apt-get update \
-        && apt-get install --no-install-recommends -y nmap curl mosquitto-clients libmosquitto1 \
+        && apt-get install --no-install-recommends -y nmap curl mosquitto-clients \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
         && chmod +x /run-application.sh
